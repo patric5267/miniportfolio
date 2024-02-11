@@ -198,20 +198,8 @@
             width: 100%;
         }
 
-        /* .img-hover{
-            width: 500px;
-            height: 100%;
-            background-color: transparent;
-            position: absolute;
-            top: 0;
-            right: 30px;
-            transition: 0.8s;
-        }
-        .img-hover:hover{
-            background-color: #081b29;
-            opacity: 0.5;
-        } */
-        .bx-menu {
+       
+        .menu {
             font-size: 1.4rem;
             display: none;
         }
@@ -239,14 +227,25 @@
         }
 
         @media screen and (width<=425px) {
+            .home-content h1 {
+                font-size: 1.7rem;
+            }
+            .home-content .role{
+                font-size: 1.2rem;
+            }
+            .home-content p{
+                word-break: break-all;
+            }
             .home {
                 background-size: cover;
                 background-repeat: no-repeat;
-                background-position: right;
+                background-position: center;
                 background-color: #1e4a6a;
                 background-blend-mode: hard-light;
             }
-
+            .home-content {
+                max-width: 100%;
+            }
             .icons {
                 font-size: 0.8rem;
                 padding: 7px;
@@ -257,7 +256,7 @@
                 padding: 7px 14px;
             }
 
-            .bx-menu {
+            .menu {
                 display: block;
             }
         }
@@ -274,7 +273,7 @@
             <a href="">Portfolio</a>
             <a href="">Contact</a>
         </nav>
-        <a href=""><i class='bx bx-menu'></i></a>
+        <a href="" class="menu"><i class='bx bx-menu'></i></a>
     </header>
     <section class="home">
         <div class="home-content">
