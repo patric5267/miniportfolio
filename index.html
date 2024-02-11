@@ -198,7 +198,7 @@
             width: 100%;
         }
 
-       
+
         .menu {
             font-size: 1.4rem;
             display: none;
@@ -224,25 +224,30 @@
             nav a {
                 display: none;
             }
+
             .menu {
                 display: block;
             }
         }
 
         @media screen and (width<=425px) {
-            .home-content p{
+            .home-content p {
                 word-break: break-all;
             }
+
             .home {
                 background-size: cover;
                 background-repeat: no-repeat;
-                background-position: center;
+                background-attachment: fixed;
+                background-position: right;
                 background-color: #1e4a6a;
                 background-blend-mode: hard-light;
             }
+
             .home-content {
                 max-width: 100%;
             }
+
             .icons {
                 font-size: 0.8rem;
                 padding: 7px;
@@ -253,7 +258,7 @@
                 padding: 7px 14px;
             }
 
-            
+
         }
     </style>
 </head>
