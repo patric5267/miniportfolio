@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            color: white;
+        }
+
+        header {
+            display: flex;
+            padding: 20px 10%;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #ededed;
+            font-weight: 800;
+        }
+
+        nav a {
+            margin-left: 2rem;
+            font-size: 1rem;
+            transition: 0.5s;
+        }
+
+        nav a:hover {
+            color: #00abf0;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+        }
+
+        .home {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0px 10%;
+            background-image: url(./home.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: relative;
+        }
+
+        .home-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 580px;
+        }
+
+        .btns {
+            display: flex;
+            align-items: center;
+        }
+
+        .home-content h1 {
+            font-size: 3.5rem;
+        }
+
+        .home-content .role {
+            color: #00abf0;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .home-content p {
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+        }
+
+        .btns a {
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 6px 24px;
+            border: 2px solid #00abf0;
+            border-radius: 7%;
+            margin-right: 1rem;
+            z-index: 1;
+            color: #00abf0;
+            overflow: hidden;
+            position: relative;
+            font-weight: 600;
+        }
+
+        .btns a:nth-child(1) {
+            color: #081b29;
+            transition: 0.5s;
+        }
+
+        .btns a:nth-child(1)::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background-color: #00abf0;
+            z-index: -1;
+            transition: 0.5s;
+        }
+
+        .btns a:nth-child(1):hover {
+            color: #00abf0;
+        }
+
+        .btns a:nth-child(1):hover::before {
+            width: 0;
+        }
+
+        .btns a:nth-child(2) {
+            color: #00abf0;
+            transition: 0.5s;
+        }
+
+        .btns a:nth-child(2)::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #00abf0;
+            z-index: -1;
+            transition: 0.5s;
+        }
+
+        .btns a:nth-child(2):hover {
+            color: #081b29;
+        }
+
+        .btns a:nth-child(2):hover::before {
+            width: 100%;
+        }
+
+        .links {
+            position: absolute;
+            left: 0;
+            margin: 0px 0px 0px 10%;
+            bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icons {
+            border: 2px solid #00abf0;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            padding: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00abf0;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        .icons::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #00abf0;
+            border-radius: 50%;
+            z-index: -1;
+            transition: 0.5s;
+        }
+
+        .icons:hover {
+            color: black;
+        }
+
+        .icons:hover::before {
+            width: 100%;
+        }
+
+        /* .img-hover{
+            width: 500px;
+            height: 100%;
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            right: 30px;
+            transition: 0.8s;
+        }
+        .img-hover:hover{
+            background-color: #081b29;
+            opacity: 0.5;
+        } */
+        .bx-menu {
+            font-size: 1.4rem;
+            display: none;
+        }
+
+        @media screen and (width<=752px) {
+            .home-content h1 {
+                font-size: 2rem;
+            }
+
+            .home-content .role {
+                font-size: 1.3rem;
+            }
+
+            .home-content {
+                max-width: 380px;
+            }
+
+            .home-content p {
+                font-size: 1rem;
+            }
+
+            nav a {
+                display: none;
+            }
+        }
+
+        @media screen and (width<=425px) {
+            .home {
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: right;
+                background-color: #1e4a6a;
+                background-blend-mode: hard-light;
+            }
+
+            .icons {
+                font-size: 0.8rem;
+                padding: 7px;
+            }
+
+            .btns a {
+                font-size: 1rem;
+                padding: 7px 14px;
+            }
+
+            .bx-menu {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="" class="logo">Jacob.</a>
+        <nav>
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Services</a>
+            <a href="">Portfolio</a>
+            <a href="">Contact</a>
+        </nav>
+        <a href=""><i class='bx bx-menu'></i></a>
+    </header>
+    <section class="home">
+        <div class="home-content">
+            <h1>Hi, I'm Jacob Aiden</h1>
+            <h2 class="role">Frontend Developer</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, nobis. Dolorem porro, numquam
+                repudiandae atque cum quis nisi provident deserunt?</p>
+            <div class="btns">
+                <a href="">Hire Me</a>
+                <a href="">Let's Talk</a>
+            </div>
+        </div>
+        <div class="links">
+            <div class="icons"><i class='bx bxl-facebook'></i></div>
+            <div class="icons"><i class='bx bxl-twitter'></i></div>
+            <div class="icons"><i class='bx bxl-linkedin'></i></div>
+        </div>
+        <div class="img-hover">
+
+        </div>
+    </section>
+</body>
+
+</html>
